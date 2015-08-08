@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+	<title>Quotes Granary</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- Angualar -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+	<script src="controllers/controller.js"></script>
+</head>
+
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Storing food for thought!</h1>
+		<input ng-model="test">
+		{{test}}
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Quote</th>
+					<th>Author</th>
+					<th>Category</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
+</body>
+
+</html>
