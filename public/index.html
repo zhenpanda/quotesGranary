@@ -22,8 +22,27 @@
 					<th>Quote</th>
 					<th>Author</th>
 					<th>Category</th>
+					<th>Action</th>
 				</tr>
 			</thead>
+			<tbody>
+				<!-- input field with ng-model submits and edits quotes -->
+				<tr>
+					<td><input class='form-control' ng-model='quote.quote'></td>
+					<td><input class='form-control' ng-model='quote.author'></td>
+					<td><input class='form-control' ng-model='quote.category'></td>
+					<td><button class='btn btn-primary' ng-click='addQuote()'>Add Quote</button></td>
+					<td><button class='btn btn-info' ng-click="update()">Update</button></td>
+				</tr>
+				<!-- loop though quotelist data -->
+				<tr ng-repeat="quote in quotelist">
+					<td>{{quote.quote}}</td>
+					<td>{{quote.author}}</td>
+					<td>{{quote.category}}</td>
+					<td><button class='btn btn-danger' ng-click="remove(quote._id)">Remove</button></td>
+					<td><button class='btn btn-warning' ng-click="edit(quote._id)">Edit</button></td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 </body>
