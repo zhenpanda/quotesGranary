@@ -1,3 +1,76 @@
+.spacing-reset {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+.full-width {
+  width: 100%;
+}
+.container {
+    width: 960px;
+}
+.top-wrapper {
+  background-color: #64b7ee;
+  padding-bottom: 0px;
+}
+.mid-wrapper {
+  background-color: #663300;
+  padding-bottom: 0px;
+}
+.bot-wrapper {
+  background-color: #000000;
+  padding-bottom: 0px;
+}
+/* ---------- */
 .sky{
-	background-color: #64b7ee;
+  padding-top: 77px;
+  background-color: #64b7ee;
+  background-image: url("/img/house.png");
+  background-repeat: no-repeat;
+  height: 800px;
+}
+.banner{
+	padding-bottom: 72px;
+	width: 560px;
+}
+.quote-textarea {
+   resize: none;
+   width:460px; 
+   height:82px;
+   font-size: 20px;
+}
+.quote-box-space{
+	padding-bottom: 10px;
+}
+.small-textarea{
+   resize: none;
+   width:220px; 
+   height:38px;
+   font-size: 18px;
+}
+/* ---------- */
+.field{
+  height: 385px;
+}
+.tube{
+	position: absolute;
+	top: 0px;
+	left: 424px;
+}
+/* ---------- */
+.basement{
+  background-color: #996666;
+  height: 416px;
+}
+.select-display{
+  height: 115px;
+}
+.quote-display{
+  height: 220px;
+  overflow:auto;
+}
+.bottom{
+  position: relative;
+  bottom: 0;
+  left: 0;
 }

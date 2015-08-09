@@ -16,14 +16,13 @@ app.use(bodyParser.json());
 app.get('/quotelist', function(req,res){
 	console.log("recevied a GET request");
 /*
-	//dummy data
+	//dummy data structure
 	quote1 = {
 		quote: 'Red apples are delish.',
 		author: 'Tim',
 		category: 'Food'
 	};
 	var contactlist = [quote1,quote2,quote3];
-	//respond by sending data vis json
 	res.json(contactlist)
 */
 	db.quote.find(function(err, docs){

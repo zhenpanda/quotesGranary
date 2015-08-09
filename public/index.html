@@ -15,6 +15,85 @@
 </head>
 
 	<body>
+		<div class="top-wrapper">
+			<div class="container sky"> 
+				<!--|____________| -->
+				<div class="row">
+					<div class="col-xs-12 text-center spacing-reset">
+						<img class="full-width banner" src="/img/banner.png" alt="" />
+					</div>
+				</div>
+				<!--|___||______||___| -->
+				<div class="row auto-margin text-center">
+					<div class="col-xs-3"></div>
+					<div class="col-xs-6 spacing-reset quote-box-space">
+						<textarea class="quote-textarea"></textarea>
+					</div>
+					<div class="col-xs-3"></div>
+				</div>
+				<!--|___||___||___||___| -->
+				<div class="row auto-margin text-center">
+					<div class="col-xs-3"></div>
+					<div class="col-xs-3 spacing-reset">
+						<textarea class="small-textarea"></textarea>
+					</div>
+					<div class="col-xs-3 spacing-reset">
+						<textarea class="small-textarea"></textarea>
+					</div>
+					<div class="col-xs-3"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="mid-wrapper">
+			<div class="container field"> 
+				<!--|____________| -->
+				<div class="row">
+					<div class="col-xs-12 text-center spacing-reset">
+						<img class="full-width" src="/img/field.png" alt="" />
+						<img class="full-width" src="/img/soil.png" alt="" />
+						<div><img class="tube" src="/img/tubes.png" alt="" /></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bot-wrapper">
+			<div class="container basement"> 
+				<!--|____________| -->
+				<div class="row">
+					<div class="col-xs-12 text-center spacing-reset select-display"></div>
+				</div>
+				<div class="row">
+					<div class="col-xs-2"></div>
+					<div class="col-xs-8 text-center spacing-reset quote-display" ng-controller="AppCtrl">
+					
+						<table class="table quote-display">
+							<thead>
+								<tr>
+									<th>Quote</th>
+									<th>Author</th>
+									<th>Category</th>
+								</tr>
+							</thead>
+							<tbody> 
+								<tr ng-repeat="quote in quotelist" ng-style="{'height':'35px'}">
+									<td>{{quote.quote}}</td>
+									<td>{{quote.author}}</td>
+									<td>{{quote.category}}</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<div class="col-xs-2"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center spacing-reset">
+					<img class="bottom" src="/img/basement.png" alt="" />
+				</div>
+			</div>
+		</div>
 
 <!-- 
 	<div class="container" ng-controller="AppCtrl">
