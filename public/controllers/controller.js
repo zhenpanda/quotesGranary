@@ -15,6 +15,11 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 		})
 	};
 
+	var clear = function (){
+		//clear input field
+		$scope.quote = "";
+	}
+
 	//upon loading the page refresh page with new data from server
 	refresh();
 
@@ -41,7 +46,8 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 		//console.log(id);
 		$http.get('/quotelist/' + id).success(function(response){
 			$scope.quote = response;
-		})
+		});
+		clear();
 	};
 
 	//updates 
