@@ -1,5 +1,6 @@
 <!DOCTYPE>
 <html ng-app="myApp">
+
 <head>
 	<title>Quotes Granary</title>
 	<!-- Latest compiled and minified CSS -->
@@ -9,9 +10,13 @@
 	<!-- Angualar -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="controllers/controller.js"></script>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body>
+	<body>
+
+<!-- 
 	<div class="container" ng-controller="AppCtrl">
 		<h1>Storing food for thought!</h1>
 		<input ng-model="test">
@@ -25,8 +30,10 @@
 					<th>Action</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody> 
+-->
 				<!-- input field with ng-model submits and edits quotes -->
+<!-- 
 				<tr>
 					<td><input class='form-control' ng-model='quote.quote'></td>
 					<td><input class='form-control' ng-model='quote.author'></td>
@@ -34,7 +41,9 @@
 					<td><button class='btn btn-primary' ng-click='addQuote()'>Add Quote</button></td>
 					<td><button class='btn btn-info' ng-click="update()">Update</button></td>
 				</tr>
+ -->
 				<!-- loop though quotelist data -->
+<!-- 
 				<tr ng-repeat="quote in quotelist">
 					<td>{{quote.quote}}</td>
 					<td>{{quote.author}}</td>
@@ -45,6 +54,8 @@
 			</tbody>
 		</table>
 	</div>
-</body>
+ -->
+
+	</body>
 
 </html>
