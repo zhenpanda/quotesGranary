@@ -11,15 +11,12 @@
 }
 .top-wrapper {
   background-color: #64b7ee;
-  padding-bottom: 0px;
 }
 .mid-wrapper {
   background-color: #663300;
-  padding-bottom: 0px;
 }
 .bot-wrapper {
   background-color: #000000;
-  padding-bottom: 0px;
 }
 .top-btn{
   padding-top: 10px;
@@ -62,15 +59,23 @@
 	left: 424px;
 }
 /* ---------- */
+.basement-display{
+  background-color: #996666;
+}
 .basement{
   background-color: #996666;
   height: 416px;
 }
 .select-display{
+  padding-top: 15px;
   height: 125px;
+  padding-bottom: 35px;
+}
+.select-parts{
+  margin-top: 40px;
 }
 .quote-display{
-  height: 280px;
+  height: 345px;
   overflow:auto;
 }
 .quote-color{

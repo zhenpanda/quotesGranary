@@ -69,20 +69,38 @@
 		</div>
 		<div class="bot-wrapper">
 			<div class="container basement"> 
-				<!--|____________| -->
-				<div class="row">
-					<div class="col-xs-12 text-center spacing-reset select-display"></div>
+				<!--|___||___||___||___| -->
+				<div class="row select-display">
+					<div class="col-xs-3 text-center spacing-reset select-parts">
+						<button class='btn' ng-click="refresh()">All</button>
+					</div>
+					<div class="col-xs-3 text-center spacing-reset select-parts">
+						<select>
+							<option ng-repeat="person in authors.values">{{person}}</option>
+						</select>
+						<button class='btn' ng-click="">Search</button>
+					</div>
+					<div class="col-xs-3 text-center spacing-reset select-parts">
+						<select>
+							<option ng-repeat="topic in categories.values">{{topic}}</option>
+						</select>
+						<button class='btn' ng-click="">Search</button>
+					</div>
+					<div class="col-xs-3 text-center spacing-reset select-parts">
+						<button class='btn' ng-click="">Random</button>
+					</div>
 				</div>
 				<div class="row">
+					<!--|_||__________||_| -->
 					<div class="col-xs-1"></div>
 					<div class="col-xs-10 text-center spacing-reset quote-display">
-					
 						<table class="table quote-display">
 							<thead>
 								<tr>
 									<th>Quote</th>
 									<th>Author</th>
 									<th>Category</th>
+									<th>Actions</th>
 								</tr>
 							</thead>
 							<tbody> 
@@ -95,12 +113,17 @@
 								</tr>
 							</tbody>
 						</table>
-
 					</div>
 					<div class="col-xs-1"></div>
 				</div>
 			</div>
-			<div class="row">
+				
+			</div>
+		</div>
+		<div class="bot-wrapper">
+			<div class="container"> 
+			<div class="row basement-display">
+				<!--|____________| -->
 				<div class="col-xs-12 text-center spacing-reset">
 					<img class="bottom" src="/img/basement.png" alt="" />
 				</div>

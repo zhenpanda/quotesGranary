@@ -22,7 +22,7 @@ app.get('/quotelist', function(req,res){
 		author: 'Tim',
 		category: 'Food'
 	};
-	var contactlist = [quote1,quote2,quote3];
+	var quotelist = [quote1,quote2,quote3];
 	res.json(contactlist)
 */
 	db.quote.find(function(err, docs){
@@ -49,24 +49,35 @@ app.delete('/quotelist/:id', function(req, res){
 	db.quote.remove({_id:mongojs.ObjectId(id)}, function(err, doc){
 		res.json(doc);
 	})
+});
+
+//route to return all key from collection
+app.get('/quotelist/author', function(req,res){
+	console.log("hit author route.")
+	db.runCommand( { distinct: "quote", key: "author" }, function(err, doc){
+		res.json(doc);
+	})
+});
+
+app.get('/quotelist/category', function(req,res){
+	console.log("hit author route.")
+	db.runCommand( { distinct: "quote", key: "category" }, function(err, doc){
+		res.json(doc);
+	})
+});
+
+app.get('/quotelist/random', function(req,res){
+	console.log('hit random route.')
 })
 
+//wild-card id goes last in listener order
 app.get('/quotelist/:id', function(req,res){
 	var id = req.params.id;
 	console.log(id);
 	db.quote.findOne({_id:mongojs.ObjectId(id)}, function(err, doc){
 		res.json(doc);
 	});
-})
-
-//route to return all key from collection
-/*
-app.get('/quotelist/author', function(req,res){
-	db.quote.find( { ln : { $exists : true } }, function(err, doc){
-		res.json(doc);
-	});
-})
-*/
+});
 
 app.put('/quotelist/:id', function(req,res){
 	var id = req.params.id;

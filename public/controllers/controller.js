@@ -13,6 +13,26 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 			console.log(response);
 			$scope.quote = "";
 		})
+
+	};
+
+	var findAuthor = function (){
+		//ask server for data capture the json data with response
+		$http.get('/quotelist/author').success(function(uqi_authors){
+			console.log("I found the authors I requested");
+			$scope.authors = uqi_authors;
+			//send obj with data to html,db stuff is accessible from dom
+			console.log(uqi_authors);
+		})
+	};
+	var findCategory = function (){
+		//ask server for data capture the json data with response
+		$http.get('/quotelist/category').success(function(uqi_category){
+			console.log("I found the category I requested");
+			$scope.categories = uqi_category;
+			//send obj with data to html,db stuff is accessible from dom
+			console.log(uqi_category);
+		})
 	};
 
 	var clear = function (){
@@ -21,6 +41,8 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 	}
 	//upon loading the page refresh page with new data from server
 	refresh();
+	findAuthor();
+	findCategory();
 
 	//send data from html to server
 	$scope.addQuote = function (){
@@ -31,6 +53,8 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 		$http.post('/quotelist', $scope.quote).success(function(response){
 			console.log(response);
 			refresh();
+			findAuthor();
+			findCategory();
 		})
 	};
 
@@ -39,6 +63,8 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 		console.log(id);
 		$http.delete('/quotelist/' + id).success(function(response){
 			refresh();
+			findAuthor();
+			findCategory();
 		})
 	};
 
@@ -64,5 +90,6 @@ myApp.controller('AppCtrl', ['$scope','$http',function($scope,$http){
 			refresh();
 		})
 	};
+
 
 }]);
