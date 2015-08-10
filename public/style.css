@@ -21,6 +21,10 @@
   background-color: #000000;
   padding-bottom: 0px;
 }
+.top-btn{
+  padding-top: 10px;
+  width: 125px;
+}
 /* ---------- */
 .sky{
   padding-top: 77px;
@@ -63,11 +67,20 @@
   height: 416px;
 }
 .select-display{
-  height: 115px;
+  height: 125px;
 }
 .quote-display{
-  height: 220px;
+  height: 280px;
   overflow:auto;
+}
+.quote-color{
+  color: gold;
+}
+.author-color{
+  color: Snow;
+}
+.cate-color{
+  color: MediumTurquoise;
 }
 .bottom{
   position: relative;

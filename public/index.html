@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<!-- Jquery -->
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="app.js"></script>
 	<!-- Angualar -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
 	<script src="controllers/controller.js"></script>
@@ -14,7 +17,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-	<body>
+	<body ng-controller="AppCtrl">
 		<div class="top-wrapper">
 			<div class="container sky"> 
 				<!--|____________| -->
@@ -27,20 +30,27 @@
 				<div class="row auto-margin text-center">
 					<div class="col-xs-3"></div>
 					<div class="col-xs-6 spacing-reset quote-box-space">
-						<textarea class="quote-textarea"></textarea>
+						<!-- quote input text field -->
+						<textarea class="quote-textarea form-control" placeholder="Write your quote here..." ng-model='quote.quote'></textarea>
 					</div>
-					<div class="col-xs-3"></div>
+					<div class="col-xs-3 top-btn">
+						<button class='btn btn-block btn-warning' ng-click='addQuote()'>Add Quote</button>
+					</div>
 				</div>
 				<!--|___||___||___||___| -->
 				<div class="row auto-margin text-center">
 					<div class="col-xs-3"></div>
 					<div class="col-xs-3 spacing-reset">
-						<textarea class="small-textarea"></textarea>
+						<!-- author input text field -->
+						<textarea class="small-textarea form-control" placeholder="author" ng-model='quote.author'></textarea>
 					</div>
 					<div class="col-xs-3 spacing-reset">
-						<textarea class="small-textarea"></textarea>
+						<!-- category input text field -->
+						<textarea class="small-textarea form-control" placeholder="category" ng-model='quote.category'></textarea>
 					</div>
-					<div class="col-xs-3"></div>
+					<div class="col-xs-3 top-btn">
+						<button class='btn btn-block btn-success' ng-click="update()">Update</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -64,8 +74,8 @@
 					<div class="col-xs-12 text-center spacing-reset select-display"></div>
 				</div>
 				<div class="row">
-					<div class="col-xs-2"></div>
-					<div class="col-xs-8 text-center spacing-reset quote-display" ng-controller="AppCtrl">
+					<div class="col-xs-1"></div>
+					<div class="col-xs-10 text-center spacing-reset quote-display">
 					
 						<table class="table quote-display">
 							<thead>
@@ -77,15 +87,17 @@
 							</thead>
 							<tbody> 
 								<tr ng-repeat="quote in quotelist" ng-style="{'height':'35px'}">
-									<td>{{quote.quote}}</td>
-									<td>{{quote.author}}</td>
-									<td>{{quote.category}}</td>
+									<td class="quote-color">{{quote.quote}}</td>
+									<td class="author-color">{{quote.author}}</td>
+									<td class="cate-color">{{quote.category}}</td>
+									<td><button class='btn btn-info' ng-click="edit(quote._id)">Edit</button></td>
+									<td><button class='btn btn-danger' ng-click="remove(quote._id)">Remove</button></td>
 								</tr>
 							</tbody>
 						</table>
 
 					</div>
-					<div class="col-xs-2"></div>
+					<div class="col-xs-1"></div>
 				</div>
 			</div>
 			<div class="row">

@@ -59,6 +59,15 @@ app.get('/quotelist/:id', function(req,res){
 	});
 })
 
+//route to return all key from collection
+/*
+app.get('/quotelist/author', function(req,res){
+	db.quote.find( { ln : { $exists : true } }, function(err, doc){
+		res.json(doc);
+	});
+})
+*/
+
 app.put('/quotelist/:id', function(req,res){
 	var id = req.params.id;
 	console.log(req.body.quote);
