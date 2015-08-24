@@ -2,13 +2,17 @@ var express = require('express');
 var app = express();
 var mongojs = require('mongojs');
 var bodyParser = require('body-parser');
+
 //mongo database and collection
-var db = mongojs('mydb', ['quote']);
+var MONGOURI = process.env.MONGOLAB_URI || 'mydb';
+var PORT = process.env.PORT || 3000;
+var db = mongojs(MONGOURI, ['quote']);
 /*
 app.get('/', function(req, res){
 	res.send("Hello world from server.js")
 });
 */
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
@@ -92,5 +96,5 @@ app.put('/quotelist/:id', function(req,res){
 		})
 });
 
-app.listen(3000);
-console.log("Server running on port 3000 captinn")
+app.listen(PORT);
+console.log("Server running on port " + PORT + " captinn")
